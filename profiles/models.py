@@ -2,9 +2,10 @@ from django.db import models
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 
+
 class Profile(models.Model):
     """
-    Model containing all the profile information 
+    Model containing all the profile information
     """
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=225, blank=True)
@@ -22,7 +23,7 @@ class Profile(models.Model):
         """
         ordering = ['created_at']
 
-        """ 
+        """
         Returns information on profile user
         """
 
@@ -32,7 +33,7 @@ class Profile(models.Model):
 
 def create_profile(sender, instance, created, **kwargs):
     """
-    Function to create profile when a new 
+    Function to create profile when a new
     user is created
     """
     if created:
