@@ -12,7 +12,7 @@ class Profile(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     content = models.TextField(blank=True)
     image = models.ImageField(
-        upload_to='images/', default='../default_profile'
+        upload_to='images/', default='../default_profile_ntyuaa'
     )
 
     class Meta:
