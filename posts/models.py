@@ -8,7 +8,6 @@ class Post(models.Model):
     a user instance. A default image set to always
     reference image.url
     """
-
     class Category(models.TextChoices):
         """
         Category class which contains choices of
@@ -21,8 +20,8 @@ class Post(models.Model):
         DOUGHNUTS = 'Doughnuts',
         PIES = 'Pies',
         HOLIDAYS = 'Holidays',
-        SCONES = 'scones',
-        PASTRIES = 'pastries',
+        SCONES = 'Scones',
+        PASTRIES = 'Pastries',
         OTHER = 'Other',
 
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -33,10 +32,6 @@ class Post(models.Model):
     category = models.CharField(
         max_length=50,
         choices=Category.choices
-    )
-    image = models.ImageField(
-        upload_to='images/', default='../default_image_v7fh2u',
-        blank=True
     )
 
     class Meta:
