@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import Comment
 
 
-class CommentSerializer(models.Model):
+class CommentSerializer(serializers.ModelSerializer):
     """
     Comment model serializer, adds extra fields
     when returning a list of Comment instances
