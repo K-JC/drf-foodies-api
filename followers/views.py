@@ -6,7 +6,8 @@ from .serializers import FollowerSerializer
 
 class FollowerList(generics.ListCreateAPIView):
     """
-    Followers list
+    Followers list, all of the user instances following another
+    user. Follow a user only if logged in.
     """
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = FollowerSerializer
@@ -14,11 +15,11 @@ class FollowerList(generics.ListCreateAPIView):
 
     def perform_create(self, serializers):
         serializers.save(owner=self.request.user)
-    
+
 
 class FollowerDetail(generics.RetrieveDestroyAPIView):
     """
-    Retrieve a follow or delete a follow
+    Retrieve a follower or delete a follower
     """
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = FollowerSerializer
