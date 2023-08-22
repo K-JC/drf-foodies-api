@@ -1,21 +1,24 @@
 from rest_framework import serializers
-from .models import Like
+from .models import Follower
 from django.db import IntegrityError
 
 
-class LikeSerializer(serializers.ModelSerializer):
+class FollowerSerializer(serializers.ModelSerializer):
     """
-    Like model serializer for post likes
+    Follow model serializer for following other users
     """
     owner = serializers.ReadOnlyField(source='owner.username')
+    followed_name = serializers.ReadOnlyField(source='followed.username')
 
     class Meta:
-        model = Like
-        fields = ['id', 'created_at', 'owner', 'post']
+        model = Follower
+        fields = [
+            'id', 'owner', 'created_at', 'followed', 'followed_name'
+        ]
 
     def create(self, validated_data):
         """
-        Handles duplicated likes by the same user
+        Handles duplicated follows by the same user
         """
         try:
             return super().create(validated_data)
