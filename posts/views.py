@@ -9,7 +9,7 @@ from drf_foodies_api.permissions import IsOwnerOrReadOnly
 
 class PostList(APIView):
     """
-    Lists all the posts
+    Lists all the posts or create a post if logged in
     """
     serializer_class = PostSerializer
     permission_classes = [
@@ -38,6 +38,9 @@ class PostList(APIView):
 
 
 class PostDetail(APIView):
+    """
+    Retrieve a post and edit or delete it if you own it
+    """
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = PostSerializer
 

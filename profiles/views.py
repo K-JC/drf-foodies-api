@@ -21,7 +21,8 @@ class ProfileList(APIView):
 
 class ProfileDetail(APIView):
     """
-    returns a 404 if profile does not exsist
+    Returns a 404 if profile does not exsist
+    Retrieve a profile or edit it if you own the profile
     """
     serializer_class = ProfileSerializer
     permission_classes = [IsOwnerOrReadOnly]
