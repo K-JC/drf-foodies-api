@@ -27,10 +27,10 @@ class PostSerializer(serializers.ModelSerializer):
         request = self.context['request']
         return request.user == obj.owner
 
-        class Meta:
-            model = Post
-            fields = [
-                'id', 'owner', 'is_owner', 'profile_id',
-                'profile_image', 'created_at', 'updated_at',
-                'title', 'category', 'content', 'image'
-            ]
+    class Meta:
+        model = Post
+        fields = [
+            'id', 'owner', 'is_owner', 'profile_id',
+            'profile_image', 'created_at', 'updated_at',
+            'title', 'category', 'content', 'image'
+        ]

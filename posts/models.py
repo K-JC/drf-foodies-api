@@ -33,6 +33,10 @@ class Post(models.Model):
         max_length=50,
         choices=Category.choices
     )
+    image = models.ImageField(
+        upload_to='images/', default='../default_image_v7fh2u',
+        blank=True
+    )
 
     class Meta:
         """
