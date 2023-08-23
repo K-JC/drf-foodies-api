@@ -11,13 +11,12 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
-if os.path.exists('env.py'):
-    import env
-
 import dj_database_url
 import os
 import re
+
+if os.path.exists('env.py'):
+    import env
 
 CLOUDINARY_STORAGE = {
     'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
