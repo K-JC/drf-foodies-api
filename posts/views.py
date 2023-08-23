@@ -1,6 +1,7 @@
-from rest_framework import generics, permissions
+from rest_framework import generics, permissions, filters
 from drf_foodies_api.permissions import IsOwnerOrReadOnly
 from .models import Post
+from django.db.models import Count
 from .serializers import PostSerializer
 
 
@@ -12,7 +13,18 @@ class PostList(generics.ListCreateAPIView):
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
     ]
-    queryset = Post.objects.all()
+    queryset = Post.objects.annotate(
+        likes_count=Count('likes', distinct=True),
+        comments_count=Count('comment', distinct=True)).order_by(
+            '-created_at')
+    filter_backends = [
+        filters.OrderingFilter
+        ]
+    ordering_feilds = [
+        'likes_count',
+        'comments_count',
+        'likes__created_at',
+        ]
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
@@ -24,4 +36,7 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = PostSerializer
-    queryset = Post.objects.all()
+    queryset = Post.objects.annotate(
+        likes_count=Count('likes', distinct=True),
+        comments_count=Count('comment', distinct=True)).order_by(
+            '-created_at')
