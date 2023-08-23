@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from posts.models import Comment
+from comments.models import Comment
 
 
 class LikeComment(models.Model):
