@@ -37,9 +37,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'DEV' in os.environ
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io', os.environ.get('ALLOWED_HOST')]
+ALLOWED_HOSTS = ['8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io', 'drf-foodies-api-1b38deb7eb8c.herokuapp.com']
 
 # Application definition
 
@@ -149,8 +149,8 @@ if 'DEV' in os.environ:
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': BASE_DIR / 'db.sqlite3',
+            }
         }
-    }
 else:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
