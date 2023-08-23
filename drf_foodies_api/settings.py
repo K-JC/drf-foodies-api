@@ -39,7 +39,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # DEBUG = 'DEV' in os.environ
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io', os.environ.get('ALLOWED_HOST'),]
+ALLOWED_HOSTS = ['8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io', os.environ.get('ALLOWED_HOST'),]
 
 # Application definition
 
