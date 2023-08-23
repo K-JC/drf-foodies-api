@@ -1,6 +1,7 @@
 from drf_foodies_api.permissions import IsOwnerOrReadOnly
 from .serializers import ProfileSerializer
 from .models import Profile
+from django_filters.rest_framework import DjangoFilterBackend
 from django.db.models import Count
 from rest_framework import generics, filters
 
@@ -11,7 +12,11 @@ class ProfileList(generics.ListCreateAPIView):
     """
     serializer_class = ProfileSerializer
     filter_backends = [
-        filters.OrderingFilter
+        filters.OrderingFilter,
+        DjangoFilterBackend,
+    ]
+    filterset_fields = [
+        'owner__following__followed__profile',
     ]
     ordering_fields = [
         'posts_count',
