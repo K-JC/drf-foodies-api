@@ -1,15 +1,28 @@
 from drf_foodies_api.permissions import IsOwnerOrReadOnly
 from .serializers import ProfileSerializer
 from .models import Profile
-from rest_framework import generics
+from django.db.models import Count
+from rest_framework import generics, filters
 
 
 class ProfileList(generics.ListCreateAPIView):
     """
     Lists all the profiles
     """
-    queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
+    ordering_fields = [
+        'posts_count',
+        'followers_count',
+        'following_count',
+        'owner__following__created_at',
+        'owner__followed__created_at',
+    ]
+    queryset = Profile.objects.annotate(
+        posts_count=Count('owner__post', distinct=True),
+        followers_count=Count('owener__followed', distinct=True),
+        following_count=Count('owner__following', distinct=True).order_by(
+            '-created_at')
+        )
 
 
 class ProfileDetail(generics.RetrieveUpdateAPIView):
@@ -18,4 +31,9 @@ class ProfileDetail(generics.RetrieveUpdateAPIView):
     """
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = ProfileSerializer
-    queryset = Profile.objects.all()
+    queryset = Profile.objects.annotate(
+        posts_count=Count('owner__post', distinct=True),
+        followers_count=Count('owener__followed', distinct=True),
+        following_count=Count('owner__following', distinct=True).order_by(
+            '-created_at')
+        )
