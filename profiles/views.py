@@ -13,6 +13,7 @@ class ProfileList(generics.ListCreateAPIView):
     serializer_class = ProfileSerializer
     filter_backends = [
         filters.OrderingFilter,
+        filters.SearchFilter,
         DjangoFilterBackend,
     ]
     filterset_fields = [
@@ -25,6 +26,10 @@ class ProfileList(generics.ListCreateAPIView):
         'following_count',
         'owner__following__created_at',
         'owner__followed__created_at',
+    ]
+    search_fields = [
+        'owner__username',
+        'name',
     ]
     queryset = Profile.objects.annotate(
         posts_count=Count('owner__post', distinct=True),

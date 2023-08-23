@@ -1,6 +1,6 @@
 from rest_framework import generics, permissions
 from drf_foodies_api.permissions import IsOwnerOrReadOnly
-from .models import Comment, LikeComment
+from .models import LikeComment
 from .serializers import LikeCommentSerializer
 
 

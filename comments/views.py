@@ -1,6 +1,7 @@
 from rest_framework import generics, permissions
 from drf_foodies_api.permissions import IsOwnerOrReadOnly
 from .models import Comment
+from django.db.models import Count
 from django_filters.rest_framework import DjangoFilterBackend
 from .serializers import CommentSerializer, CommentDetailSerializer
 
@@ -11,9 +12,14 @@ class CommentList(generics.ListCreateAPIView):
      """
     serializer_class = CommentSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    queryset = Comment.objects.all()
+    queryset = Comment.objects.annotate(
+        comment_like_count=Count('like_comments', distinct=True),
+    ).order_by('-created_at')
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['post']
+    filterset_fields = [
+        'owner',
+        'post'
+        ]
 
     def perform_create(self, serializers):
         serializers.save(owner=self.request.user)
