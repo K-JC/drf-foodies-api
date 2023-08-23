@@ -37,7 +37,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'DEV' in os.environ
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io', 'drf-foodies-api-1b38deb7eb8c.herokuapp.com']
 
