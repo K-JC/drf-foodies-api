@@ -5,7 +5,7 @@ from comments.models import Comment
 
 class LikeComment(models.Model):
     """
-    class model for liking a comment 
+    class model for liking a comment
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     comment = models.ForeignKey(
