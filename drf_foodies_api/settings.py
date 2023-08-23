@@ -36,7 +36,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEV' in os.environ
+# DEBUG = 'DEV' in os.environ
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io', os.environ.get('ALLOWED_HOST'),]
 
