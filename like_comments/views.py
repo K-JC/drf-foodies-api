@@ -22,4 +22,4 @@ class LikeCommentDetail(generics.RetrieveDestroyAPIView):
     """
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = LikeCommentSerializer
-    queryset = LikeCommentSerializer.objects.all()
+    queryset = LikeComment.objects.all()
