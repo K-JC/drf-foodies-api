@@ -6,7 +6,7 @@ from django.db.models import Count
 from rest_framework import generics, filters
 
 
-class ProfileList(generics.ListCreateAPIView):
+class ProfileList(generics.ListAPIView):
     """
     Lists all the profiles
     """
