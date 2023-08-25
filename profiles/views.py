@@ -10,6 +10,11 @@ class ProfileList(generics.ListAPIView):
     """
     Lists all the profiles
     """
+    queryset = Profile.objects.annotate(
+        posts_count=Count('owner__post', distinct=True),
+        followers_count=Count('owner__followed', distinct=True),
+        following_count=Count('owner__following', distinct=True)).order_by(
+            '-created_at')
     serializer_class = ProfileSerializer
     filter_backends = [
         filters.OrderingFilter,
@@ -31,11 +36,6 @@ class ProfileList(generics.ListAPIView):
         'owner__username',
         'name',
     ]
-    queryset = Profile.objects.annotate(
-        posts_count=Count('owner__post', distinct=True),
-        followers_count=Count('owner__followed', distinct=True),
-        following_count=Count('owner__following', distinct=True)).order_by(
-            '-created_at')
 
 
 class ProfileDetail(generics.RetrieveUpdateAPIView):
@@ -43,9 +43,9 @@ class ProfileDetail(generics.RetrieveUpdateAPIView):
     Retrieve a profile or edit it if you own the profile
     """
     permission_classes = [IsOwnerOrReadOnly]
-    serializer_class = ProfileSerializer
     queryset = Profile.objects.annotate(
         posts_count=Count('owner__post', distinct=True),
         followers_count=Count('owner__followed', distinct=True),
         following_count=Count('owner__following', distinct=True)).order_by(
             '-created_at')
+    serializer_class = ProfileSerializer
