@@ -35,8 +35,14 @@ class PostDetailViewTests(APITestCase):
     def setUp(self):
         kelly = User.objects.create_user(username='kelly', password='pass')
         luke = User.objects.create_user(username='luke', password='pass')
-        Post.objects.create(owner=kelly, title='a title', content='kellys content')
-        Post.objects.create(owner=luke, title='other title', content='lukes content')
+        Post.objects.create(
+            owner=kelly, title='a title',
+            content='kellys content'
+            )
+        Post.objects.create(
+            owner=luke, title='other title',
+            content='lukes content'
+            )
 
     def test_can_retrieve_post_using_valid_id(self):
         response = self.client.get('/posts/1/')
