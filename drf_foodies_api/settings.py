@@ -37,8 +37,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 # DEBUG = False
 
-ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST'), '8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io',]
+ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST'), '8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io',
+'localhost',]
 
+CSRF_TRUSTED_ORIGINS = ['8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io']
 # Application definition
 
 INSTALLED_APPS = [
@@ -66,7 +68,7 @@ INSTALLED_APPS = [
     'comments',
     'likes',
     'followers',
-    'like_comments',
+    'like_comments'
 ]
 
 SITE_ID = 1
@@ -80,12 +82,12 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS':
         'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
-    'DATETIME_FORMAT': '%d %b %Y'
-    }
+    'DATETIME_FORMAT': '%d %b %Y',
+}
 if 'DEV' not in os.environ:
     REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] = [
         'rest_framework.renderers.JSONRenderer',
-        ]
+    ]
 
 REST_USE_JWT = True
 JWT_AUTH_SECURE = True
@@ -106,13 +108,20 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+if 'CLIENT_ORIGIN' in os.environ:
+    CORS_ALLOWED_ORIGINS = [
+        os.environ.get('CLIENT_ORIGIN')
+    ]
+
 if 'CLIENT_ORIGIN_DEV' in os.environ:
     extracted_url = re.match(
         r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE
-    ).group(0)
+        ).group(0)
     CORS_ALLOWED_ORIGIN_REGEXES = [
         rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
     ]
+
+CORS_ALLOW_CREDENTIALS = True
 
 #if 'CLIENT_ORIGIN' in os.environ:
 #    CORS_ALLOWED_ORIGINS = [
@@ -120,7 +129,6 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
 #        os.environ.get('CLIENT_ORIGIN_DEV')
 #    ]
 
-CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'drf_foodies_api.urls'
 
@@ -193,7 +201,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
