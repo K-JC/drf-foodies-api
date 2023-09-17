@@ -65,7 +65,6 @@ DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
-    'localhost',
     '8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io',
 ]
 # Application definition
@@ -122,6 +121,7 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
         rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
     ]
 CORS_ALLOW_CREDENTIALS = True
+
 
 ROOT_URLCONF = 'drf_foodies_api.urls'
 
