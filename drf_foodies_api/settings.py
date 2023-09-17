@@ -49,7 +49,9 @@ JWT_AUTH_COOKIE = 'my-app-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 JWT_AUTH_SAMESITE = 'None'
 
-REST_AUTH_SERIALIZERS = {'USER_DETAILS_SERIALIZER': 'drf_foodies_api.serializers.CurrentUserSerializer'}
+REST_AUTH_SERIALIZERS = {
+    'USER_DETAILS_SERIALIZER': 'drf_foodies_api.serializers.CurrentUserSerializer'
+    }
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -62,27 +64,11 @@ DEBUG = 'DEV' in os.environ
 # DEBUG = False
 
 ALLOWED_HOSTS = [
-    os.environ.get('ALLOWED_HOST'), '8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io',
-    'localhost',]
-
-CSRF_TRUSTED_ORIGINS = ['8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io']
-
-if 'CLIENT_ORIGIN' in os.environ:
-    CORS_ALLOWED_ORIGINS = [
-       os.environ.get('CLIENT_ORIGIN')
-    ]
-
-if 'CLIENT_ORIGIN_DEV' in os.environ:
-    extracted_url = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
-    CORS_ALLOWED_ORIGIN_REGEXES = [
-        rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
-    ]
-
-CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOWED_ORIGINS = [
-    'https://8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io'
+    os.environ.get('ALLOWED_HOST'),
+    'localhost', '8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io'
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io']
 
 # Application definition
 
@@ -125,6 +111,28 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+if 'CLIENT_ORIGIN' in os.environ:
+    CORS_ALLOWED_ORIGINS = [
+        os.environ.get('CLIENT_ORIGIN')
+    ]
+
+if 'CLIENT_ORIGIN_DEV' in os.environ:
+    extracted_url = re.match(
+        r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE
+    ).group(0)
+    CORS_ALLOWED_ORIGIN_REGEXES = [
+        rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
+    ]
+
+
+CORS_ALLOW_CREDENTIALS = True
+
+#CORS_ALLOWED_ORIGINS = [
+#    'https://8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io'
+#]
+
 
 ROOT_URLCONF = 'drf_foodies_api.urls'
 
