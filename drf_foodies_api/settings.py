@@ -129,10 +129,9 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
 
 CORS_ALLOW_CREDENTIALS = True
 
-#CORS_ALLOWED_ORIGINS = [
-#    'https://8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io'
-#]
-
+CORS_ALLOWED_ORIGINS = [
+    'https://8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io'
+    ]
 
 ROOT_URLCONF = 'drf_foodies_api.urls'
 
