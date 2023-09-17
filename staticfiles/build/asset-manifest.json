@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.157335e1.chunk.css",
+    "main.js": "/static/js/main.985318e9.chunk.js",
+    "main.js.map": "/static/js/main.985318e9.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b1185bfd.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b1185bfd.js.map",
+    "static/js/2.60bc9368.chunk.js": "/static/js/2.60bc9368.chunk.js",
+    "static/js/2.60bc9368.chunk.js.map": "/static/js/2.60bc9368.chunk.js.map",
+    "static/js/3.90b40157.chunk.js": "/static/js/3.90b40157.chunk.js",
+    "static/js/3.90b40157.chunk.js.map": "/static/js/3.90b40157.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.157335e1.chunk.css.map": "/static/css/main.157335e1.chunk.css.map",
+    "static/js/2.60bc9368.chunk.js.LICENSE.txt": "/static/js/2.60bc9368.chunk.js.LICENSE.txt",
+    "static/media/foodies.9ec6d04e.png": "/static/media/foodies.9ec6d04e.png",
+    "static/media/logo.0afe10c2.png": "/static/media/logo.0afe10c2.png",
+    "static/media/signin.4a47ee2d.jpg": "/static/media/signin.4a47ee2d.jpg",
+    "static/media/signup.3a45befb.jpg": "/static/media/signup.3a45befb.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b1185bfd.js",
+    "static/js/2.60bc9368.chunk.js",
+    "static/css/main.157335e1.chunk.css",
+    "static/js/main.985318e9.chunk.js"
+  ]
+}
