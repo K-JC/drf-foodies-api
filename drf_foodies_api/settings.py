@@ -61,15 +61,13 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = 'DEV' in os.environ
-DEBUG = False
+DEBUG = 'DEV' in os.environ
+# DEBUG = False
 
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
-    '8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io'
+    'localhost',
 ]
-
-CSRF_TRUSTED_ORIGINS = ['https://8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io']
 
 # Application definition
 
