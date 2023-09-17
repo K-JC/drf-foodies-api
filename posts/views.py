@@ -11,32 +11,31 @@ class PostList(generics.ListCreateAPIView):
     Lists all the posts or create a post if logged in
     """
     serializer_class = PostSerializer
-    permission_classes = [
-        permissions.IsAuthenticatedOrReadOnly
-    ]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Post.objects.annotate(
         likes_count=Count('likes', distinct=True),
-        comments_count=Count('comment', distinct=True)).order_by(
-            '-created_at')
+        comments_count=Count('comment', distinct=True)
+    ).order_by('-created_at')
+    
     filter_backends = [
         filters.OrderingFilter,
         filters.SearchFilter,
         DjangoFilterBackend,
-        ]
+    ]
     filterset_fields = [
         'owner__followed__owner__profile',
         'likes__owner__profile',
-        'owner__profile'
+        'owner__profile',
     ]
     search_fields = [
         'owner__username',
         'title',
     ]
-    ordering_feilds = [
+    ordering_fields = [
         'likes_count',
         'comments_count',
         'likes__created_at',
-        ]
+    ]
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
@@ -50,5 +49,5 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = PostSerializer
     queryset = Post.objects.annotate(
         likes_count=Count('likes', distinct=True),
-        comments_count=Count('comment', distinct=True)).order_by(
-            '-created_at')
+        comments_count=Count('comment', distinct=True)
+        ).order_by('-created_at')

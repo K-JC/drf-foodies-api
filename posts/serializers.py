@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Post
+from posts.models import Post
 from likes.models import Like
 
 
@@ -13,7 +13,7 @@ class PostSerializer(serializers.ModelSerializer):
     comments_count = serializers.ReadOnlyField()
 
     def validate_image(self, value):
-        if value.size > 1024 * 1024 * 2:
+        if value.size > 2 * 1024 * 1024:
             raise serializers.ValidationError(
                 'Image size is larger than 2MB!'
             )
@@ -38,7 +38,7 @@ class PostSerializer(serializers.ModelSerializer):
                 owner=user, post=obj
             ).first()
             return like.id if like else None
-            return None
+        return None
 
     class Meta:
         model = Post

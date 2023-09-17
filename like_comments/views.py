@@ -12,8 +12,8 @@ class LikeCommentList(generics.ListCreateAPIView):
     serializer_class = LikeCommentSerializer
     queryset = LikeComment.objects.all()
 
-    def perform_create(self, serializers):
-        serializers.save(owner=self.request.user)
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
 
 
 class LikeCommentDetail(generics.RetrieveDestroyAPIView):

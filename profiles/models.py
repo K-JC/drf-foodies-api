@@ -21,7 +21,7 @@ class Profile(models.Model):
         Returns the profile instances in reverse
         (recently created will be first)
         """
-        ordering = ['created_at']
+        ordering = ['-created_at']
 
         """
         Returns information on profile user

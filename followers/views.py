@@ -10,11 +10,11 @@ class FollowerList(generics.ListCreateAPIView):
     user. Follow a user only if logged in.
     """
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    serializer_class = FollowerSerializer
     queryset = Follower.objects.all()
+    serializer_class = FollowerSerializer
 
-    def perform_create(self, serializers):
-        serializers.save(owner=self.request.user)
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
 
 
 class FollowerDetail(generics.RetrieveDestroyAPIView):
@@ -22,5 +22,5 @@ class FollowerDetail(generics.RetrieveDestroyAPIView):
     Retrieve a follower or delete a follower
     """
     permission_classes = [IsOwnerOrReadOnly]
-    serializer_class = FollowerSerializer
     queryset = Follower.objects.all()
+    serializer_class = FollowerSerializer
