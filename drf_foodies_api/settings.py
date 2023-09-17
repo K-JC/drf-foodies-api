@@ -80,7 +80,7 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
-    'http://8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io'
+    'https://8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io'
 ]
 
 
