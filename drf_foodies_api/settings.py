@@ -66,6 +66,24 @@ ALLOWED_HOSTS = [
     'localhost',]
 
 CSRF_TRUSTED_ORIGINS = ['8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io']
+
+if 'CLIENT_ORIGIN' in os.environ:
+    CORS_ALLOWED_ORIGINS = [
+       os.environ.get('CLIENT_ORIGIN')
+    ]
+
+if 'CLIENT_ORIGIN_DEV' in os.environ:
+    extracted_url = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
+    CORS_ALLOWED_ORIGIN_REGEXES = [
+        rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
+    ]
+
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    'http://8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io'
+]
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -107,19 +125,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-#if 'CLIENT_ORIGIN' in os.environ:
-#    CORS_ALLOWED_ORIGINS = [
-#        os.environ.get('CLIENT_ORIGIN')
-#    ]
-
-if 'CLIENT_ORIGIN_DEV' in os.environ:
-    extracted_url = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
-    CORS_ALLOWED_ORIGIN_REGEXES = [
-        rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
-    ]
-
-CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'drf_foodies_api.urls'
 
