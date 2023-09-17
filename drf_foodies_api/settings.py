@@ -121,9 +121,6 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
     ]
 CORS_ALLOW_CREDENTIALS = True
 
-
-
-
 ROOT_URLCONF = 'drf_foodies_api.urls'
 
 TEMPLATES = [
