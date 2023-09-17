@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from corsheaders.defaults import default_headers, default_methods
 import os
 import re
 import dj_database_url
@@ -68,6 +69,9 @@ ALLOWED_HOSTS = [
     'localhost',
 ]
 
+CORS_ALLOW_HEADERS = list(default_headers)
+CORS_ALLOW_METHODS = list(default_methods)
+CSRF_TRUSTED_ORIGINS = [os.environ.get(    'CLIENT_ORIGIN_DEV',    'CLIENT_ORIGIN',    )]
 # Application definition
 
 INSTALLED_APPS = [
