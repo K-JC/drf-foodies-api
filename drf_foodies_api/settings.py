@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from corsheaders.defaults import default_headers, default_methods
 import os
 import re
 import dj_database_url
@@ -60,12 +61,12 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEV' in os.environ
-# DEBUG = False
+# DEBUG = 'DEV' in os.environ
+DEBUG = False
 
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
-    'localhost', '8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io'
+    '8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io'
 ]
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io']
@@ -126,12 +127,13 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
         rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
     ]
 
-
 CORS_ALLOW_CREDENTIALS = True
-
-CORS_ALLOWED_ORIGINS = [
-    'https://8000-kjc-drffoodiesapi-nl39pdpd3bw.ws-eu104.gitpod.io'
-    ]
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_HEADERS = list(default_headers)
+CORS_ALLOW_METHODS = list(default_methods)
+CSRF_TRUSTED_ORIGINS = [os.environ.get(
+    'CLIENT_ORIGIN_DEV', 'CLIENT_ORIGIN',
+)]
 
 ROOT_URLCONF = 'drf_foodies_api.urls'
 
