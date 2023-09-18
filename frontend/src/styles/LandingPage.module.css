@@ -10,7 +10,7 @@
 
   /* For screen size of smaller screen */
 @media all and (max-width: 440px) {
-  .LandingImage {
+.LandingImage {
       width: 200px;
       height: 250px;
   }
