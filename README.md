@@ -112,7 +112,12 @@ I created a GitHub project called Foodies Stories and connected this to my proje
 
 
 # Bugs
-While originolly trying to deploy my project my api wasnt talking to my front end and I had alot of CORS errors come up in my chrome dev tools console. After much headache over trying to fix this I had seen that we could combined our reposityrs into one work space which would mean that cors would no longer be an issue as the api was coming from the same workspace/shared base URL. I followed the steps set by code institute to enable my project to contain both front end and back end portions of the project and once all was set up and I deployed my project to heroku it was finally working! 
+During the start of the project when using npm start an error occured in the terminal which was “ code: 'ERR_OSSL_EVP_UNSUPPORTED” so I went to search slack for an answer and it looked like that everytime I wanted to start my app I would need to use “nvm install 16 && nvm use 16”  this would now allow me to start my app, but it was something I need to do every time.
+foodies-drf-api profile page error 500, changes were bit migrated to the database, wasnt connected correctly. 
+edit profile wasnt loading correctly, my route needed a "/" to the end of the file path. 
+The drop down menu for editing posts was not working as expected, after going through my code I had used a capital in PostsPage it should have been lower case to begin with postsPage. Once corrected the drop down menu worked as expected. 
+Comment count was not showing, after going through my code it turned out to be a spelling error in my post.js once corrected the number of comments was now showing as expected. 
+While originolly trying to deploy my project my api wasnt talking to my front end and I had alot of CORS errors come up in my chrome dev tools console(Cors No Header Origin). After much headache over trying to fix this I had seen that we could combined our reposityrs into one work space which would mean that cors would no longer be an issue as the api was coming from the same workspace/shared base URL. I followed the steps set by code institute to enable my project to contain both front end and back end portions of the project and once all was set up and I deployed my project to heroku it was finally working! 
 
 ## Solved
 ## Unsolved Bugs
@@ -144,6 +149,7 @@ GitPod - Gitpod was used for writing my code and when I pushed commits from Gitp
 Heroku - Where the project was deployed to.
 Google Development Tool - Where I checked the responsiveness of the website and edited any code without the risk of making it a permanent change.
 Elephantsql - I used Elephantsql for my database.
+Canva - For creating my logo/favicon.
 
 ## Languages
 HTML
