@@ -54,9 +54,13 @@ Only the Home, Sign Up and Sign In navigations will be visible to non logged use
 # Wireframe
 Once I had an idea of what the user would need, I could then begin to figure out what the platform would look like.
 I created some wireframes using Figma, this is how I envisioned the homepage of the platform to look and the rest of the pages to keep the same visuals.
+
 ![]()
 ![]()
 ![]()
+
+From the development plane and wireframe I got a good idea of what user stories I create.
+I created a GitHub project called Foodies Stories and connected this to my project repository. The user stories are as follows.
 
 # User Stories
 ![]()
@@ -135,9 +139,6 @@ Profile
 
 
 
-From the development plane and wireframe I got a good idea of what user stories I create.
-I created a GitHub project called Foodies Stories and connected this to my project repository. The user stories are as follows.
-
 # Features
 
 
@@ -148,13 +149,13 @@ edit profile wasnt loading correctly, my route needed a "/" to the end of the fi
 The drop down menu for editing posts was not working as expected, after going through my code I had used a capital in PostsPage it should have been lower case to begin with postsPage. Once corrected the drop down menu worked as expected. 
 Comment count was not showing, after going through my code it turned out to be a spelling error in my post.js once corrected the number of comments was now showing as expected. 
 While trying to implement emoji picker so that a user could add an emoji to their comment I was unable to make this work, after looking through slack and stackoverflow I realised that emojis are universal and will already be in the keyboard for smaller screens like phones and tablets. For desktops you need to press the windows key + and . to open a emoji window and then these can be added into a comment. 
+When originoally trying to deploy the back end to heroku the only page I had trouble with was the “profiles” page and an error of 500 was showing. I went back to my code and I did fix an error with my ProfilesList views. I had put the wrong generics in there and should have been generics.ListAPIView. I deployed once more and I then checked the profiles page and the 500 error was no longer showing and the information on the profile was showing.
+
 While originolly trying to deploy my project my api wasnt talking to my front end and I had alot of CORS errors come up in my chrome dev tools console(Cors No Header Origin). After much headache over trying to fix this I had seen that we could combined our reposityrs into one work space which would mean that cors would no longer be an issue as the api was coming from the same workspace/shared base URL. I followed the steps set by code institute to enable my project to contain both front end and back end portions of the project and once all was set up and I deployed my project to heroku it was finally working! 
 
-## Solved
-## Unsolved Bugs
-
-
 # Future Features
+I would like to impliment more messages to the users when they interact with the site such as You have logged in/logged out successfully.
+
 # Validator Testing
 HTML - W3C HTML Validator
 CSS - W3C CSS Validator
@@ -191,10 +192,36 @@ Javascript
 
 # Accessibility
 Lighhouse Information 
+![]()
+
+# Setting up 
+For the back end I started by using the template provided by code institue to create my repositry. I called this drf_foodies_api. I then began to install the libarys I would need, first “pip3 install ‘django<4’". Once installed I then created my project name by inputting “django-admin startproject drf-foodies-api .” to the terminal. I then proceed to Install Cloudinary Storage by inputting “pip install django-cloudinary-storage==0.3.0”, this will be storage for any images used. And finally I Installed the image processing library known as  Pillow by inputting “pip install Pillow==8.2.0” to the terminal. Now that I had installed some libraries I needed to put these into my settings.py file under INSTALLED APPS portion. I created an env file and made sure that this was also present in my gitignore file. This would keep all the sensitive stuff hidden so it wouldnt be visible on the repositry. 
+Next I added my profiles app, I needed to add this to settings.py under installed apps. Python3 manage.py startapp profiles. Every new app I need to install I use this same code but change the app name at the end. 
+Time to add the super user so only this user can access the admin panel. Enter “python3 manage.py createsuperuser” to the terminal and create a superuser.
+Install Django rest framework, enter “pip3 install djangorestframework”to the terminal and then add this library to installed apps “rest_framework”.
+Making sure to migrate any changes to the models and to add librarys to the requirements.txt file.
+Later I began on the JSON web tokens I entered “pip install dj-rest-auth==2.1.9 to the terminal.
+Then input this to the terminal “pip install 'dj-rest-auth[with_social]” and “pip install djangorestframework-simplejwt”.
+
+
+
+
+
+
 
 # Deployment
 DEPLOYMENT PROCESS HEROKU - FRONT END AND BACK END
+Back end 
+Make sure I have migrated all changes and saved my git pod workspace. 
+Log in to elephantsql account and create a new instance. Give the plan a name “drf-foodies-api  free plan" select the region i am in europe-west2 (london). Then review and create the instance. The instance is now on the dashboard. Copy the url for my instance.
+Next login to heroku, go to the dashboard, create a new app by clicking on new, new app. Create my unique name for my app, then select my region as europe and click create app. 
+Go to settings tab  and open the config vars tab, create a config var key of DATABASE_URL and for the value my database url from elephantsql that i just created. Add CLOUDINARY_URL key with a value of my own cloudinary url. Next DISABLE COLLECTSTATIC with a value of 1. And lastly a key of SECRET_KEY with a value of my chosen secret key that I have made. 
+Now go to the deploy tab select the deployment method to github, scroll down till you reach the deploy branch section and click the deploy branch button. Watch the main branch being deployed, this will show any errors with the deployment and will help to identify any issue. I had an issue where my branch was not deploying correctly and this is because I had an error with my allowed_hosts section of my code once I had changed the code and continued to debug it finally was working and the deployment was successful. Once the branch is finished with its building, you can then click on the open app and it should load successfully.
+
 Ended up being a combined deployment, explain proccess...
+
+
+
 
 # Credits
 
@@ -202,7 +229,7 @@ Ended up being a combined deployment, explain proccess...
 All images used are from Pexels, I used Tiny PNG to compress images down and then used Cloudinary as my storage for them.[Pexels](https://www.pexels.com/)
 All icons used for my navigation links are from FontAwesome.-[FontAwesome](https://fontawesome.com/)
 All icons used for default images are from Icons8.-[Image8](http://icons8.com)
-My favicon and logo I created myself from using Canva.-[]()
+My favicon and logo I created myself from using Canva.-[Canva](https://www.canva.com/)
 
 
 
