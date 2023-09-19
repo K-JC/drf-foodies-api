@@ -1,7 +1,7 @@
 ## Foodies
 For my fifth and final project with Code Institute I chose to create a baking community based content sharing platform to share baking creations to a global audience. Foodies is all about yummy food, sweet treats and all things good. The platform enables users to create posts, edit or delete posts,read posts,comment and like on posts. Users can also follow other users and keep up to date on their latest creations. Users can use the search bar at the top to browse through the platform's posts. Search results can be filtered on usernames, popularity, date created, title, content keywords and category. This is my advanced front-end project, I hope you enjoy it! - [Link To Foodies](https://drf-foodies-api-1b38deb7eb8c.herokuapp.com/)
 
-Combined Repository - [Link](https://github.com/K-JC/drf-foodies-api)
+Combined Repository - [Repository](https://github.com/K-JC/drf-foodies-api)
 
 ## Table of Contents  
 * [Development Planes](#development-planes)
@@ -61,47 +61,77 @@ I created some wireframes using Figma, this is how I envisioned the homepage of 
 # User Stories
 ![]()
  Authentication
+
 * Authentication - Sign up/Sign in - As a site user I can sign up and sign in to the site so that I can access the functionality of the website.
+  By using all auth a user can easily sign up or sign into their account.
 * Authentication - Log Out -As a site user I can log out of my account so that I have more security over it.
+  By using all auth a user can log out of their account which gives them security over their account. 
 * Authentication - Logout Status - As a site user I can maintain my logged-in status until I choose to log out so that my user experience is not compromised.
+  A logged in user can see their staus in the nav bar by their logged in profile achived by using Django's all auth. 
 * Posts -As a site user I cannot edit or delete any posts another user has created so that there is complete protection/control over a user's content.
+   By making custom permission so that a user is stopped from making changes to others posts/comments etc.
 * Comments- As a site user I cannot edit or delete any comments and likes made that another user has created so that there is complete protection/control over a user’s content.
+*  By making custom permission so that a user is stopped from making changes to others posts/comments etc.
 * Likes -As a site user I can only like or unlike other users' posts/comments, not my own so that I can show my support for other posts/comments.
+  Using the Likes and LikeComments model a user can like a post or like a users comment, by having custom permissions a user can not like their own post or their own comment.
 * Following- As a site user I can follow other users so that I can keep up to date with the user’s posts.
+  Using the follower model with custom permissions this allows a user to follow another user but stops them from following themself.
 * Unfollow - As a site user I can unfollow other users so that I have control over if I want to continue to follow those users anymore.
+  
  Navigation
+ 
 * Navigation- As a site user I can see a navigation bar on every page so that I can easily navigate to other pages I wish to visit.
 * Navigation Scrolling- As a user I can keep scrolling through the posts on the site that are loaded for me automatically so that my user experience is not compromised.
 * Navigation Bar- As a site user I can see the navigation bar is customized to my logged-in or out status so that I can either view all the functionalities available or have limited options. 
 * Navigation 404 -As a site user I can see the 404 page so that I am aware I have reached an invalid web page.
 * Routing- As a site user I can navigate through pages quickly so that I can view content seamlessly without page refresh.
 * Navigation - As a site user I can be notified when my actions are successful so that I know if my actions were successful or not.
+  
 Post
+
 * View Homepage posts- As a site user I can view all the posts on the Homepage so that I can choose to view/like and comment on any post I'm interested in. 
 * View posts details - As a site user I can view details on a post made so that I can see comments made by all the different users of the platform.
 * Create posts- As a site user I can create a post so I can share my creations with my community.
+  By using the Post model a user can add an image, content, category and a title to their post. A user can see how long ago a post was made. 
 * Edit/delete posts- As a site user I can edit/delete my posts so that I can make changes to an existing post title/description or remove my post completely.
+ By using generics (RetrieveUpdateDestroyAPIView) in the Post views a users can edit/delete their post.
 * View posts Feed- As a site user I can view all user posts made on the Feed page so that I can keep up to date with other users.
+
 * Post Order View- As a site user I can view the most recent posts, ordered by the most recent first so that I am kept up to date with the latest content.
 * Search Posts- As a site user I can search for posts/users in a search box so that I can find specific posts/users that I am searching for.
+  By using custom filterset feilds and search feilds in the post view a user can search for relevant posts based on title, name and content.
 * Content Filters- As a site user I can view content filtered by users I follow so that I can keep up to date with their creations they post about.
+* By using custom filterset feilds in the views of post/comment/profile a user can filter information based on what they search.
+  
 Comment 
 * View Comment- As a site user I can view comments on a post so that I can read what others are saying. 
 * Post Comment- As a site user I can post a comment on a post so that I can share what I am thinking.
-* Edit/Delete Comment- As a site user I can edit/delete my comments so that I have control over what I want to say and either fix or remove my comment. 
+* Edit/Delete Comment- As a site user I can edit/delete my comments so that I have control over what I want to say and either fix or remove my comment.
+  By using generics (RetrieveUpdateDestroyAPIView) in the Comment views a users can edit/delete their comment.
 * Comment Creation Date- As a site user I can see how long ago a comment was made so that I know how old a comment is.
+ By using generics (ListCreateAPIView) in Comment views a user can see a list of comments on a post and by the django import naturaltime A user can see how long ago a comment was made. 
+
 * Comment Likes - As a site user I can like another user's comment so that I can show I support their comment.
+  the Comment Likes model enables a users to like another user comment.
+
 Likes  
 * Likes- As a site user I can see the number of likes on a post so that I can see which are becoming popular.
+  the likes model enables a users to like another user posts.
+
 * Like/Unlike- As a site user I can like/unlike comments so that I can show my support/remove support for a particular post.
+  By using generics (RetrieveDestroyAPIView) in the Like views. A users can remove their like on a post.
+  
 Profile
 * Following Users- As a site user I can follow/unfollow other users so that I have control over whether I want to see their content on my feed or not.
+  By using the Follow model users can choose to follow or unfollow other users. 
 * Popular Profiles- As a site user I can see the most popular profiles so that I can gauge who’s creations are getting noticed more.
 * Update Profile About- As a site user I can update my about me so that I can make changes when necessary and other users will keep updated on me.
 * Update Profile Picture- As a site user I can update my profile picture so that I can keep my profile up to date.
 * View Profiles- As a user I can view another user's profile picture so I can easily identify other users of the platform.
+  By using the profile model, a user can view users profile pictures. 
 * Update Profile Info- As a site user I can update my username and password so that I can change my display name and keep my profile secure.
 * View Other Profiles- As a site user I can view other users' profiles, about me, number of posts, follows and users followed so that I can learn more about them.
+  By using the profile views any posts by a user, followers and followed count will show on their profile page.
 
 
 
@@ -117,6 +147,7 @@ foodies-drf-api profile page error 500, changes were bit migrated to the databas
 edit profile wasnt loading correctly, my route needed a "/" to the end of the file path. 
 The drop down menu for editing posts was not working as expected, after going through my code I had used a capital in PostsPage it should have been lower case to begin with postsPage. Once corrected the drop down menu worked as expected. 
 Comment count was not showing, after going through my code it turned out to be a spelling error in my post.js once corrected the number of comments was now showing as expected. 
+While trying to implement emoji picker so that a user could add an emoji to their comment I was unable to make this work, after looking through slack and stackoverflow I realised that emojis are universal and will already be in the keyboard for smaller screens like phones and tablets. For desktops you need to press the windows key + and . to open a emoji window and then these can be added into a comment. 
 While originolly trying to deploy my project my api wasnt talking to my front end and I had alot of CORS errors come up in my chrome dev tools console(Cors No Header Origin). After much headache over trying to fix this I had seen that we could combined our reposityrs into one work space which would mean that cors would no longer be an issue as the api was coming from the same workspace/shared base URL. I followed the steps set by code institute to enable my project to contain both front end and back end portions of the project and once all was set up and I deployed my project to heroku it was finally working! 
 
 ## Solved
