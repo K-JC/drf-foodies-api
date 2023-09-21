@@ -3,6 +3,8 @@ For my fifth and final project with Code Institute I chose to create a baking co
 
 Combined Repository - [Repository](https://github.com/K-JC/drf-foodies-api)
 
+![Responisive](frontend/src/assets/responsive.png)
+
 ## Table of Contents  
 * [Development Planes](#development-planes)
 * [WireFrame](#wireframe)
@@ -51,19 +53,25 @@ I want this to look visually pleasing and clean. Google fonts of Noto Serif and 
 A user would visit the platform and see the logo to the left hand side “Foodies” to the right would be all the navigation links. On smaller screen sizes there would be a navigation drop down menu. 
 Only the Home, Sign Up and Sign In navigations will be visible to non logged users. Once a user is either signed up/signed in they will see the other navigation links such as “Add Post, Liked, Feed, Sign Out and Profile”.
 
+![ER-Diagram](frontend/src/assets/er-diagram.png)
+
 # Wireframe
 Once I had an idea of what the user would need, I could then begin to figure out what the platform would look like.
 I created some wireframes using Figma, this is how I envisioned the homepage of the platform to look and the rest of the pages to keep the same visuals.
 
-![]()
-![]()
-![]()
+![Homepage](frontend/src/assets/figma-homepage.png)
+![Homepage-mobile](frontend/src/assets/figma-homepage-mobile.png)
+![Profile](frontend/src/assets/figma-profile.png)
+![Profile-mobile](frontend/src/assets/figma-profile-mobile.png)
+![Sign-in](frontend/src/assets/figma-sign-in.png)
+![Sign-up](frontend/src/assets/figma-sign-up.png)
 
 From the development plane and wireframe I got a good idea of what user stories I create.
 I created a GitHub project called Foodies Stories and connected this to my project repository. The user stories are as follows.
 
 # User Stories
-![]()
+![Stories-Start](frontend/src/assets/projectboard.png)
+![In-Development-Stories](frontend/src/assets/stories.png)
  Authentication
 
 * Authentication - Sign up/Sign in - As a site user I can sign up and sign in to the site so that I can access the functionality of the website.
@@ -164,6 +172,12 @@ Eslint Play Validator
 
 # Testing
 ## Manual Testing 
+Manual Testing of the platform was consistant through the development of the project in GitPod. 
+All navigation links take me to the correct pages.
+Sign in and sign up forms work correctly and that information is shown on the database.
+The navigation link for adding a post takes the user to the add a post page where the user can then upload an image create a title, choose a catagory and write a bit about their creation then they can create a post, this will then take the user to the post list page where all posts submitted will be. Only the posts owner can edit or delete their post which they can do by clicking a drop down menu to the right hand side of their post, there is an option to edit a post which works as expected and an option to delete that post, which again works as expected and the post is no longer avalible. 
+A user can click on the feed navagation link which will take them to the list of all posts made. The liked navigation link will show the user all the posts they have liked. The profile navagation link will take the logged user to their own profile in which they can edit their username, password, about me and profile image. These all worked as expected. The sign out navagation link signs the user out of their acount and leads them back to a landing page. The foodies logo takes the user back to the feed page. All navigation works as expected though manual testing. Commenting on a post and the comment count work as expected and the like a comment function again works as expected and the number will increase the more likes a comment has. If a comment or a comment like is removed the number also goes down to highlight this. 
+Collapsible navigation works on smaller screen sizes and all buttons work  as expected. 
 
 
 # Technologies Used
@@ -191,7 +205,7 @@ Javascript
 
 
 # Accessibility
-Lighhouse Information 
+Using Google Development tools, I tested the accessibility of the site via the lighthouse option. My platform scored 
 ![Lighthouse](frontend/src/assets/lighthouse.png)
 
 # Setting up 
