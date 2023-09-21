@@ -192,7 +192,7 @@ Javascript
 
 # Accessibility
 Lighhouse Information 
-![Lighthouse](src/assets/lighthouse.png)
+![Lighthouse](frontend/src/assets/lighthouse.png)
 
 # Setting up 
 For the back end I started by using the template provided by code institue to create my repositry. I called this drf_foodies_api. I then began to install the libarys I would need, first “pip3 install ‘django<4’". Once installed I then created my project name by inputting “django-admin startproject drf-foodies-api .” to the terminal. I then proceed to Install Cloudinary Storage by inputting “pip install django-cloudinary-storage==0.3.0”, this will be storage for any images used. And finally I Installed the image processing library known as  Pillow by inputting “pip install Pillow==8.2.0” to the terminal. Now that I had installed some libraries I needed to put these into my settings.py file under INSTALLED APPS portion. I created an env file and made sure that this was also present in my gitignore file. This would keep all the sensitive stuff hidden so it wouldnt be visible on the repositry. 
