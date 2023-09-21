@@ -179,6 +179,19 @@ The navigation link for adding a post takes the user to the add a post page wher
 A user can click on the feed navagation link which will take them to the list of all posts made. The liked navigation link will show the user all the posts they have liked. The profile navagation link will take the logged user to their own profile in which they can edit their username, password, about me and profile image. These all worked as expected. The sign out navagation link signs the user out of their acount and leads them back to a landing page. The foodies logo takes the user back to the feed page. All navigation works as expected though manual testing. Commenting on a post and the comment count work as expected and the like a comment function again works as expected and the number will increase the more likes a comment has. If a comment or a comment like is removed the number also goes down to highlight this. 
 Collapsible navigation works on smaller screen sizes and all buttons work  as expected. 
 
+# Testing A Profile
+* Logging in as Winter's profile.
+![Test-Login](frontend/src/assets/winter-signin.png)
+* Show Winter's profile page with how many followers, following and posts made so far. On the right hand side can see who she is following in the popular profiles section.
+![Test-Profile](frontend/src/assets/winter-profile-page.png)
+* Show post page for Winter to create a post. Has title, catagory, discription and also upload section for images to upload.
+![Test-Add-Post](frontend/src/assets/winter-post.png)
+* Once the post has been submitted Winter is sent to the feed page where her newly created post is.
+![Test-Posts-List](frontend/src/assets/winter-feed.png)
+* Clicking on Winter's post, she has a comment and a like from profile user teresa.
+![Test-Commenting-and-Liking](frontend/src/assets/teresa-comment-like.png)
+* Now Winter can see comments and can react to these comments by liking them.
+![Test-Like-Comment](frontend/src/assets/winter-like-comment.png)
 
 # Technologies Used
 ## Frameworks, Libraries, Programs & Applications Used
