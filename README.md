@@ -148,8 +148,18 @@ Profile
 
 
 # Features
-
-
+For Users with no account...
+*Home Page (leads to the Feed Page but this can't be interact with if not signed up/logged in)
+*About Us/Landing Page
+* Sign In Page
+* Sign Up Page
+For Users with an account ...
+* Add Post Page
+* Feed Page
+* Liked Page
+* Sign Out Page
+* Profile Page
+  
 # Bugs
 During the start of the project when using npm start an error occured in the terminal which was “ code: 'ERR_OSSL_EVP_UNSUPPORTED” so I went to search slack for an answer and it looked like that everytime I wanted to start my app I would need to use “nvm install 16 && nvm use 16”  this would now allow me to start my app, but it was something I need to do every time.
 foodies-drf-api profile page error 500, changes were bit migrated to the database, wasnt connected correctly. 
@@ -162,13 +172,14 @@ When originoally trying to deploy the back end to heroku the only page I had tro
 While originolly trying to deploy my project my api wasnt talking to my front end and I had alot of CORS errors come up in my chrome dev tools console(Cors No Header Origin). After much headache over trying to fix this I had seen that we could combined our reposityrs into one work space which would mean that cors would no longer be an issue as the api was coming from the same workspace/shared base URL. I followed the steps set by code institute to enable my project to contain both front end and back end portions of the project and once all was set up and I deployed my project to heroku it was finally working! 
 
 # Future Features
-I would like to impliment more messages to the users when they interact with the site such as You have logged in/logged out successfully.
+I would like to impliment more messages to the users when they interact with the site such as You have logged in/logged out successfully. I would also like the user to have the ability to add videos aswell as images to their posts. 
 
 # Validator Testing
-HTML - W3C HTML Validator
-CSS - W3C CSS Validator
-PEP8 - Python Validator
-Eslint Play Validator
+* HTML - Using W3C HTML Validator, as there was some Django in my HTML the validator didn't like those very much. So my only issues where from this, percentages in href  attribute and trailing slash.
+* CSS - Using W3C CSS Validator, all passed with no issues.
+* PEP8 - Using Python Validator, all passed with no issues.
+* I used Eslint Play Validator online, only came up with import and export my appear only with sourceType: module.
+* I used JSHint Online Validator also.
 
 # Testing
 ## Manual Testing 
@@ -195,26 +206,27 @@ Collapsible navigation works on smaller screen sizes and all buttons work  as ex
 
 # Technologies Used
 ## Frameworks, Libraries, Programs & Applications Used
-Django Rest
-React.js
-Bootstrap.js
-Python
-PostgreSQL
-Cloudinary - I used Cloudinary to store images from this project.
-Font Awesome - I used Icons from Font Awesome for my navigation links.
-Figma - I used Figma in the planning stage to create my sitemap, from this I created my content sharing platform like I had designed.
-GitHub - My project was stored on Github.
-GitPod - Gitpod was used for writing my code and when I pushed commits from Gitpod they were uploaded to Github where my project was stored.
-Heroku - Where the project was deployed to.
-Google Development Tool - Where I checked the responsiveness of the website and edited any code without the risk of making it a permanent change.
-Elephantsql - I used Elephantsql for my database.
-Canva - For creating my logo/favicon.
+* Django Rest
+* React.js
+* Bootstrap.js
+* Python
+* PostgreSQL
+* Cloudinary - I used Cloudinary to store images from this project.
+* Font Awesome - I used Icons from Font Awesome for my navigation links.
+* Figma - I used Figma in the planning stage to create my sitemap, from this I created my content sharing platform like I had designed.
+* Lucid - I used Lucid to create the ER Diagram for my platform.
+* GitHub - My project was stored on Github.
+* GitPod - Gitpod was used for writing my code and when I pushed commits from Gitpod they were uploaded to Github where my project was stored.
+* Heroku - Where the project was deployed to.
+* Google Development Tool - Where I checked the responsiveness of the website and edited any code without the risk of making it a permanent change.
+* Elephantsql - I used Elephantsql for my database.
+* Canva - For creating my logo/favicon.
 
 ## Languages
-HTML
-CSS
-Python
-Javascript
+* HTML
+* CSS
+* Python
+* Javascript
 
 
 # Accessibility
