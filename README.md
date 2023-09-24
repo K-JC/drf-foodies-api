@@ -22,10 +22,8 @@ Combined Repository - [Repository](https://github.com/K-JC/drf-foodies-api)
 I aim to achieve a content sharing platform for all things baking, where users can post images of their creations, they can like and comment on other users posts. A user can also follow another user so they can keep up to date with that user. The post user will have the ability to edit or delete their posts.
 When at the first stage of planning my project I put myself in the shoes of the user, I needed to understand what the users wants or needs for this platform. I noted down the following. Why would the user come here in the first place? To post about their baking creations. To like and comment on other users' creations. To create awareness of their talent to others. The first thing the user should see is that this is a content sharing platform. It should be very clear how to navigate it for great user experience. What would make them come back after their first visit? To edit/delete their original post or to make a new post. To check if a user they followed has posted anything new or if there are any comments that they need to reply to.
 If the experience of navigating is straightforward, easy to use and the platform looks good this should create a good user experience.
-Goal for a user to post their creations to a global network of people.
-
-* Core Values
-A place for users to upload their own post(photos of their baking). A place for users to like or comment on another user's post. A user can edit or delete their own posts/comments/images. A user can see all the posts that they have liked. A user can follow another user. A user will have their own profile page/about/profile image(can upload their own image). A user will have login and log out functionality. A new user will be able to sign up for their own account. Will need a react-bootstrap library to aid in the styling and responsiveness of the website. The application will be hosted on heroku. Will connect to a custom API to store our users/posts/likes/comments. User stories to guide me to build functionality . Simple automated tests to check the project works correctly. CRUD functionality for users.
+The goal for a user is to post/share their creations to a global network of people.
+Core Values - A place for users to upload their own post(photos of their baking). A place for users to like or comment on another user's post. A user can edit or delete their own posts/comments/images. A user can see all the posts that they have liked. A user can follow another user. A user will have their own profile page/about/profile image(can upload their own image). A user will have login and log out functionality. A new user will be able to sign up for their own account. Will need a react-bootstrap library to aid in the styling and responsiveness of the website. The application will be hosted on heroku. Will connect to a custom API to store our users/posts/likes/comments. User stories to guide me to build functionality . Simple automated tests to check the project works correctly. CRUD functionality for users.
 
 ## Scope
 The features I want to implement are the ability for a user to create their own account, they can log in and log out with their own username and password which will make their account secure. They will be able to personalize their account with an about me section, so that other users can find out more about them. 
@@ -58,7 +56,7 @@ I created some wireframes using Figma, this is how I envisioned the homepage of 
 ![Sign-up](frontend/src/assets/figma-sign-up.png)
 
 From the development plane and wireframe I got a good idea of what user stories I will create.
-I created a GitHub project called Foodies Stories and connected this to my project repository. The user stories are as follows.
+I created a GitHub project called Foodies and connected this to my project repository. The user stories are as follows.
 
 # User Stories
 ![Stories-Start](frontend/src/assets/projectboard.png)
@@ -71,12 +69,10 @@ I created a GitHub project called Foodies Stories and connected this to my proje
   By using all auth a user can log out of their account which gives them security over their account. 
 * Authentication - Logout Status - As a site user I can maintain my logged-in status until I choose to log out so that my user experience is not compromised.
   A logged in user can see their status in the nav bar by their logged in profile achieved by using Django's all auth. 
-* Posts -As a site user I cannot edit or delete any posts another user has created so that there is complete protection/control over a user's content.
-   By making custom permission so that a user is stopped from making changes to others posts/comments etc.
-* Comments- As a site user I cannot edit or delete any comments and likes made that another user has created so that there is complete protection/control over a user’s content.
-*  By making custom permission so that a user is stopped from making changes to others posts/comments etc.
+* Posts -As a site user I cannot edit or delete any posts another user has created so that there is complete protection/control over a user's content. By making custom permission so that a user is stopped from making changes to others posts/comments etc.
+* Comments- As a site user I cannot edit or delete any comments and likes made that another user has created so that there is complete protection/control over a user’s content. By making custom permission so that a user is stopped from making changes to others posts/comments etc.
 * Likes -As a site user I can only like or unlike other users' posts/comments, not my own so that I can show my support for other posts/comments.
-  Using the Likes and LikeComments model a user can like a post or like a user's comment, by having custom permissions a user can not like their own post or their own comment.
+  Using the Like and LikeComment model a user can like a post or like a user's comment, by having custom permissions a user can not like their own post or their own comment.
 * Following- As a site user I can follow other users so that I can keep up to date with the user’s posts.
   Using the follower model with custom permissions this allows a user to follow another user but stops them from following themself.
 * Unfollow - As a site user I can unfollow other users so that I have control over if I want to continue to follow those users anymore.
