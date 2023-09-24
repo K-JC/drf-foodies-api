@@ -154,14 +154,14 @@ For users with no account
 *About Us/Landing Page
 * Sign In Page
 * Sign Up Page
-![No-Account](frontend/src/assets/logged-in.png)
+![No-Account](frontend/src/assets/logged-out.png)
 For Users with an account ...
 * Add Post Page
 * Feed Page
 * Liked Page
 * Sign Out Page
 * Profile Page
-![With-Account](frontend/src/assets/logged-out.png)
+![With-Account](frontend/src/assets/logged-in.png)
 * Logo and Favicon
 ![Logo-Create](frontend/src/assets/canva-create.png)
 ![Foodies-Logo](frontend/src/assets/foodies.png)
