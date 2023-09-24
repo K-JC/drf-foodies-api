@@ -25,13 +25,13 @@ Why would the user come here in the first place? To post about their baking crea
 The first thing the user should see is that this is a content sharing platform. It should be very clear how to navigate it for great user experience.
 What would make them come back after their first visit? To edit/delete their original post or to make a new post. To check if a user they followed has posted anything new or if there are any comments that they need to reply to.
 If the experience of navigating is straightforward, easy to use and the platform looks good this should create a good user experience.
-Goal for a user to post their creations to a global network of people
+Goal for a user to post their creations to a global network of people.
 Core Values
 A place for users to upload their own post(photos of their baking). A place for users to like or comment on another users post. A user can edit or delete their own posts/comments/images. A user can see all the posts that they have liked. A user can follow another user. A user will have their own profile page/about/profile image(can upload their own image). A user will have login and log out functionality. A new user will be able to sign up for their own account. Will need a react-bootstrap library to aid in the styling and responsiveness of the website. The application will be hosted on heroku. Will connect to a custom API to store our users/posts/likes/comments. User stories to guide me to build functionality . Simple automated tests to check the project works correctly. CRUD functionality for users.
 
 ## Scope
 The features I want to implement are the ability for a user to create their own account, they can log in and log out with their own username and password which will make their account secure. 
-They will be able to personalize their account with an about me section, so that other users can find out more about you. 
+They will be able to personalize their account with an about me section, so that other users can find out more about them. 
 They will also be able to upload a profile picture. They can change this at any time. The about me section can also be edited/updated.
 They will be able to create a post about their creations, this will include a title, an image and a description relating to the image uploaded. 
 They will be able to edit/delete their own posts. Follow/ unfollow other users. Like and comment on other users posts and can comment on their own post in response to other users comments. 
@@ -50,7 +50,7 @@ Information on the homepage will be relevant to this sharing content platform, f
 
 ## Surface
 I want this to look visually pleasing and clean. Google fonts of Noto Serif and a backup of sans-serif. A combinations of different colors (purple) #B8A1BC, #F2C6D0 and #E2D9E3.
-A user would visit the platform and see the logo to the left hand side “Foodies” to the right would be all the navigation links. On smaller screen sizes there would be a navigation drop down menu. 
+A user would visit the platform and see the logo to the left hand side to the right would be all the navigation links. On smaller screen sizes there would be a navigation drop down menu. 
 Only the Home, Sign Up and Sign In navigations will be visible to non logged users. Once a user is either signed up/signed in they will see the other navigation links such as “Add Post, Liked, Feed, Sign Out and Profile”.
 
 ![ER-Diagram](frontend/src/assets/er-diagram.png)
@@ -66,12 +66,13 @@ I created some wireframes using Figma, this is how I envisioned the homepage of 
 ![Sign-in](frontend/src/assets/figma-sign-in.png)
 ![Sign-up](frontend/src/assets/figma-sign-up.png)
 
-From the development plane and wireframe I got a good idea of what user stories I create.
+From the development plane and wireframe I got a good idea of what user stories I will create.
 I created a GitHub project called Foodies Stories and connected this to my project repository. The user stories are as follows.
 
 # User Stories
 ![Stories-Start](frontend/src/assets/projectboard.png)
 ![In-Development-Stories](frontend/src/assets/stories.png)
+
  Authentication
 
 * Authentication - Sign up/Sign in - As a site user I can sign up and sign in to the site so that I can access the functionality of the website.
@@ -148,17 +149,19 @@ Profile
 
 
 # Features
-For Users with no account...
+For users with no account
 *Home Page (leads to the Feed Page but this can't be interact with if not signed up/logged in)
 *About Us/Landing Page
 * Sign In Page
 * Sign Up Page
+![No Account](frontend/src/assets/)
 For Users with an account ...
 * Add Post Page
 * Feed Page
 * Liked Page
 * Sign Out Page
 * Profile Page
+![With Account](frontend/src/assets/)
   
 # Bugs
 During the start of the project when using npm start an error occured in the terminal which was “ code: 'ERR_OSSL_EVP_UNSUPPORTED” so I went to search slack for an answer and it looked like that everytime I wanted to start my app I would need to use “nvm install 16 && nvm use 16”  this would now allow me to start my app, but it was something I need to do every time.
@@ -242,24 +245,59 @@ Making sure to migrate any changes to the models and to add librarys to the requ
 Later I began on the JSON web tokens I entered “pip install dj-rest-auth==2.1.9 to the terminal.
 Then input this to the terminal “pip install 'dj-rest-auth[with_social]” and “pip install djangorestframework-simplejwt”.
 
-
-
-
-
+For the front end I set up a new repository on Github called “foodies”. I then opened the workspace on Gitpod using the green Gitpod button. In the terminal I entered the following command: “npx create-react-app . --template git+https://github.com/Code-Institute-Org/cra-template-moments.git --use-npm”.Enter “y” to confirm installing the create-react-app package, then start the app with: “npm start”.
+This set up my workspace with the correct template for working in github. Loading all the dependencies/versions needed for my project. As soon as I was ready to start my app I was met with my first error, “ code: 'ERR_OSSL_EVP_UNSUPPORTED”, I went straight to the slack community to see if I could find an answer and it looked like that everytime I wanted to start my app I would need to use “nvm install 16 && nvm use 16”  this would now allow me to start my app, but it was something I need to do every time.
+Once I created some test text to see if everything was working fine I then saved and pushed my changes to github. Next on the list was to install bootstrap with react. Install with “npm install react-bootstrap@1.6.3 bootstrap@4.6.0” add link to html header. Import bootstrap buttons from react bootstrap in the apps.js file and then replace the test text with a button. This worked in the preview. 
 
 
 # Deployment
-DEPLOYMENT PROCESS HEROKU - FRONT END AND BACK END
-Back end 
-Make sure I have migrated all changes and saved my git pod workspace. 
-Log in to elephantsql account and create a new instance. Give the plan a name “drf-foodies-api  free plan" select the region i am in europe-west2 (london). Then review and create the instance. The instance is now on the dashboard. Copy the url for my instance.
-Next login to heroku, go to the dashboard, create a new app by clicking on new, new app. Create my unique name for my app, then select my region as europe and click create app. 
-Go to settings tab  and open the config vars tab, create a config var key of DATABASE_URL and for the value my database url from elephantsql that i just created. Add CLOUDINARY_URL key with a value of my own cloudinary url. Next DISABLE COLLECTSTATIC with a value of 1. And lastly a key of SECRET_KEY with a value of my chosen secret key that I have made. 
-Now go to the deploy tab select the deployment method to github, scroll down till you reach the deploy branch section and click the deploy branch button. Watch the main branch being deployed, this will show any errors with the deployment and will help to identify any issue. I had an issue where my branch was not deploying correctly and this is because I had an error with my allowed_hosts section of my code once I had changed the code and continued to debug it finally was working and the deployment was successful. Once the branch is finished with its building, you can then click on the open app and it should load successfully.
+I started out with early deployment to make sure thinks were working as expected.
+For the Back End portion of my project I made sure I had migrated all changes and saved my git pod workspace. 
+I then logged in to my elephantsql account and create a new instance. Give the plan a name “drf-foodies-api", select free plan, select the region I am in "europe-west2 (london)". Then review and create the instance. The instance is now on the dashboard. I copied the url for my instance.
+Next I logged into heroku, I went to my dashboard, create a new app by clicking on new, new app. Create my unique name for my app, then select my region as europe and click create app. 
+I then went to the settings tab and opened the config vars tab, create a config var key of DATABASE_URL and for the value my database url from elephantsql that I had just created. Add CLOUDINARY_URL key with a value of my own cloudinary url. Next DISABLE COLLECTSTATIC with a value of 1. And lastly a key of SECRET_KEY with a value of my chosen secret key that I have made. 
+After this I then went to the deploy tab, I select the deployment method to github, scroll down till I reached the deploy branch section and click the deploy branch button. I watched the main branch being deployed, this will show any errors with the deployment and will help to identify any issue. I had an issue where my branch was not deploying correctly and this is because I had an error with my allowed_hosts section of my code once I had changed the code and continued to debug it finally was working and the deployment was successful. Once the branch is finished with its building, you can then click on the open app and it should load successfully.
 
-Ended up being a combined deployment, explain proccess...
+For the front end portion of my project I made sure I had saved all changes and pushed them to GitHub.
+I then went to Heroku to create my new app. I clicked on a new app, gave it a unique name of “foodies-project”, and selected my region as europe. Then I clicked create app. I then wanted to connect this to my github repository, so I went to the deployment section and searched for my repository. I selected this and then clicked on connect. Now my repository is wired up. I clicked on deploy branch, once it was finished building my app I then clicked on open app to view if it was working, which it was. Early deployment is ideal because I wanted to make sure everything was connected correctly from the get go.
 
-
+Combining the projects (after a big headache with CORS) Code institue had created a way in which the projects could be combined which would solve the pesky CORS issue.
+I went to my GitHub repository for my React project (foodies) I then clicked on the "Code" button, select the HTTPS tab, and copied the URL provided. I then opened my workspace for my DRF project (drf-foodies-api). I went to the terminal window and typed "git clone <my_foodies_url> frontend" This created a new folder in my drf workspace called front end which contained all the files from my react foodies project. In the terminal window I change directory to my frontend folder with the following command
+"cd frontend". I then entered this command to remove the .git folder, .gitignore file and README.md from the front end folder. "rm -rf .git .gitignore README.md".
+I then installed the npm packages required for developing with React using the following command "npm install". 
+I moved back to the root directory of my project with the following command "cd ..". I then opened the package.json file in the frontend directory, and at the bottom of the file I added a new key to the JSON object. This will allow the preview to run within my development environment "proxy": "http://localhost:8000/". I then opened the axiosDefaults.js file and comment out the baseURL setting.
+To ensure that the API’s routes do not clash with the React application’s routes when the project is deployed I needed to set a new path for the API routes in the server and the baseURL. In my env.py file, I made the following changes:
+Commentted out the DEV environment variable.
+Add a new key DEBUG with a value of ‘1’
+Add a new key ALLOWED_HOST with the value of my development environment URL
+Add a new key CLIENT_ORIGIN with the value of my development environment URL
+A key for DATABASE_URL set to the value of my ElephantSQL database URL
+A key for CLOUDINARY_URL set to the value of my Cloudinary URL
+In settings.py:
+I set the DEBUG to the value of the DEBUG environment variable and update ALLOWED_HOSTS to include the ALLOWED_HOST environment variable added to my env.py file.
+Now that I have the two parts of my application within the same workspace, the CORS issues with the original separate projects are no longer a problem. This is because both parts of the project will come from the same base URL.
+So I could remove most of the code in the Django project relating to CORS.
+In settings.py I removed the line containing the import re
+I removed all the CORS code, leaving only the CORS_ALLOWED_ORIGINS list
+Now The Django API will run on Port 8000, and the React application will run on Port 8080.
+I then went back to the termaial making sure I was in the root directory and I then installed whitenoise with the following command, "pip3 install whitenoise==6.4.0".
+Once installed I added this dependency to my requirements.txt file. I created a new folder called staticfiles in the root directly with the following command "mkdir staticfiles".
+In settings.py:
+In the INSTALLED_APPS list, I made sure that the ‘cloudinary_storage’ app name was below ‘django.contrib.staticfiles’. 
+This ensures that Cloudinary will not attempt to intervene with staticfiles, and allows whitenoise to become the primary package responsible for static files
+In the MIDDLEWARE list, add WhiteNoise below the SecurityMiddleware and above the SessionMiddleware with "whitenoise.middleware.WhiteNoiseMiddleware".
+In the TEMPLATES list in the DIRS key, I added "os.path.join(BASE_DIR, 'staticfiles', 'build')"  this tells Django and WhiteNoise where to look for Reacts index.html file in deployment.
+In the static files section, I added the STATIC_ROOT and WHITENOISE_ROOT variables and values to tell Django and WhiteNoise where to look for the admin static files and Reacts static files during deployment with "STATIC_ROOT = BASE_DIR / 'staticfiles'" and "WHITENOISE_ROOT = BASE_DIR / 'staticfiles' / 'build'".
+In the urls.py file of my drf-foodies-api:
+I removed the root_route view from the .views imports, I then imported the TemplateView from the generic Django views with "from django.views.generic import TemplateView".
+In the url_patterns list, I removed the root_route code and replace it with the TemplateView pointing to the index.html file. At the bottom of the file, I added the 404 handler to allow React to handle 404 errors with "handler404 = TemplateView.as_view(template_name='index.html')".
+I then went and added api/ to the beginning of all the API URLs, excluding the path for the home page and admin panelIn axiosDefault.js.
+In the axiosDefault.js I then set the axios.defaults.baseURL to "/api".
+I then went to compile all of the static files from both the Django admin panel and the React files into the staticfiles folder for deployment. By enterring "python3 manage.py collectstatic" to the terminal this will collect the admin and DRF staticfiles to the empty staticfiles directory that was created earlier.
+After this I compliled the react app and moved its files to the staticfile folderNext, we will compile the React application and move its files to the staticfiles folder. 
+by running "npm run build && mv build ../staticfiles/."
+In the root directory of my project I created a new file called runtime.txt and inside it I added "python-3.9.16".
+Project is now working with both front end and back end in the workspace. Deployed to Heroku.
 
 
 # Credits
@@ -277,7 +315,7 @@ Code Institute - Code inspired and altered from Moments Walkthrough
 Code Institute - Code inspired and altered from Django Rest Framework Walkthrough
 Code Institute - Code inspired and altered from React Essentials Mini Walkthrough
 Alert messages - Code from [](https://blog.logrocket.com/create-custom-react-alert-message/)
-Landing page code inspired and altered from ...
+Landing page code inspired and altered from -[](https://github.com/jyotiyadav2508/childhood-memories-react-pp5/blob/main/src/pages/landingPage/LandingPage.js)
 
 
 
