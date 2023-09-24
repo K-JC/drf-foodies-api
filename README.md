@@ -154,17 +154,17 @@ For users with no account
 *About Us/Landing Page
 * Sign In Page
 * Sign Up Page
-![No Account](frontend/src/assets/logged-in.png)
+![No-Account](frontend/src/assets/logged-in.png)
 For Users with an account ...
 * Add Post Page
 * Feed Page
 * Liked Page
 * Sign Out Page
 * Profile Page
-![With Account](frontend/src/assets/logged-out.png)
+![With-Account](frontend/src/assets/logged-out.png)
 * Logo and Favicon
-![Logo Create](frontend/src/assets/canva-create.png)
-![Foodies Logo](frontend/src/assets/foodies.png)
+![Logo-Create](frontend/src/assets/canva-create.png)
+![Foodies-Logo](frontend/src/assets/foodies.png)
   
   
 # Bugs
@@ -216,13 +216,13 @@ Collapsible navigation works on smaller screen sizes and all buttons work  as ex
 * Log in to admin pannel to make sure all new accounts were showing on the admin pannel.
 
 # Testing Back End
-![Back End](frontend/src/assets/sign-up-data-form.png)
+![Back-End](frontend/src/assets/sign-up-data-form.png)
 * Check to see if an account was showing on the back end which it was.
   
 # Testing in React 
-![P8P Test](frontend/src/assets/pass-test.png)
+![P8P-Test](frontend/src/assets/pass-test.png)
 * Tests pass for react in terminal and in P8P
-![P8P Test](frontend/src/assets/p8p-test.png)
+![P8P-Test](frontend/src/assets/p8p-test.png)
 
 
 
@@ -332,8 +332,8 @@ My favicon and logo I created myself from using Canva.-[Canva](https://www.canva
 Code Institute - Code inspired and altered from Moments Walkthrough
 Code Institute - Code inspired and altered from Django Rest Framework Walkthrough
 Code Institute - Code inspired and altered from React Essentials Mini Walkthrough
-Alert messages - Code from [Alert Messages](https://blog.logrocket.com/create-custom-react-alert-message/)
-Landing page code inspired and altered from -[Landing Page](https://github.com/jyotiyadav2508/childhood-memories-react-pp5/blob/main/src/pages/landingPage/LandingPage.js)
+Alert messages - Code from - [Alert Messages](https://blog.logrocket.com/create-custom-react-alert-message/)
+Landing page code inspired and altered from - [Landing Page](https://github.com/jyotiyadav2508/childhood-memories-react-pp5/blob/main/src/pages/landingPage/LandingPage.js)
 
 
 
