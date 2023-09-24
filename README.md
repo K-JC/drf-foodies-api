@@ -41,6 +41,7 @@ The user will have the ability to log out of their account. Information on the h
 ## Surface
 I want this to look visually pleasing and clean. Google fonts of Noto Serif and a backup of sans-serif. A combinations of different colors (purple) #B8A1BC, #F2C6D0 and #E2D9E3. A user would visit the platform and see the logo to the left hand side to the right would be all the navigation links. On smaller screen sizes there would be a navigation drop down menu. Only the Home, Sign Up and Sign In navigations will be visible to non logged users. Once a user is either signed up/signed in they will see the other navigation links such as “Add Post, Liked, Feed, Sign Out and Profile”.
 
+# ER Diagram
 ![ER-Diagram](frontend/src/assets/er-diagram.png)
 
 # Wireframe
@@ -203,7 +204,7 @@ I would like to implement more messages to the users when they interact with the
 # Tests
 * Tests passed for react in terminal 
 * Tests passed for P8P
-![P8P-Test](frontend/src/assets/pass-test.png)
+![Pass-Test](frontend/src/assets/pass-test.png)
 ![P8P-Test](frontend/src/assets/p8p-test.png)
 
 
@@ -302,10 +303,10 @@ Project is now working with both front end and back end in the workspace. Deploy
 I would like to credit and thank my amazing husband and our two children who were my motivation for continuing with all my projects. They kept me going when things got tough and I wouldn't be where I am today without them and their support. 
 
 ## Media 
-* All images used are from Pexels, I used Tiny PNG to compress images down and then used Cloudinary as my storage for them.[Pexels](https://www.pexels.com/)
-* All icons used for my navigation links are from FontAwesome.-[FontAwesome](https://fontawesome.com/)
-* All icons used for default images are from Icons8.-[Image8](http://icons8.com)
-* My favicon and logo I created myself from using Canva.-[Canva](https://www.canva.com/)
+* All images used are from Pexels, I used Tiny PNG to compress images down and then used Cloudinary as my storage for them - [Pexels](https://www.pexels.com/)
+* All icons used for my navigation links are from FontAwesome - [FontAwesome](https://fontawesome.com/)
+* All icons used for default images are from Icons8 - [Image8](http://icons8.com)
+* My favicon and logo I created myself from using Canva - [Canva](https://www.canva.com/)
 
 ## Content 
 * Code Institute - Code inspired and altered from Moments Walkthrough
