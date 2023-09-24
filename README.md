@@ -1,5 +1,5 @@
 ## Foodies
-For my fifth and final project with Code Institute I chose to create a baking community based content sharing platform to share baking creations to a global audience. Foodies is all about yummy food, sweet treats and all things good. The platform enables users to create posts, edit or delete posts,read posts,comment and like on posts. Users can also follow other users and keep up to date on their latest creations. Users can use the search bar at the top to browse through the platform's posts. Search results can be filtered on usernames, popularity, date created, title, content keywords and category. This is my advanced front-end project, I hope you enjoy it! - [Link To Foodies](https://drf-foodies-api-1b38deb7eb8c.herokuapp.com/)
+For my fifth and final project with Code Institute I chose to create a baking community based content sharing platform to share baking creations to a global audience. Foodies are all about yummy food, sweet treats and all things good. The platform enables users to create posts, edit or delete posts,read posts,comment and like on posts. Users can also follow other users and keep up to date on their latest creations. Users can use the search bar at the top to browse through the platform's posts. Search results can be filtered on usernames, popularity, date created, title, content keywords and category. This is my advanced front-end project, I hope you enjoy it! - [Link To Foodies](https://drf-foodies-api-1b38deb7eb8c.herokuapp.com/)
 
 Combined Repository - [Repository](https://github.com/K-JC/drf-foodies-api)
 
@@ -21,15 +21,14 @@ Combined Repository - [Repository](https://github.com/K-JC/drf-foodies-api)
 ## Strategy
 I aim to achieve a content sharing platform for all things baking, where users can post images of their creations, they can like and comment on other users posts. A user can also follow another user so they can keep up to date with that user. The post user will have the ability to edit or delete their posts.
 When at the first stage of planning my project I put myself in the shoes of the user, I needed to understand what the users wants or needs for this platform. I noted down the following. Why would the user come here in the first place? To post about their baking creations. To like and comment on other users' creations. To create awareness of their talent to others. The first thing the user should see is that this is a content sharing platform. It should be very clear how to navigate it for great user experience. What would make them come back after their first visit? To edit/delete their original post or to make a new post. To check if a user they followed has posted anything new or if there are any comments that they need to reply to.
-If the experience of navigating is straightforward, easy to use and the platform looks good this should create a good user experience.
-The goal for a user is to post/share their creations to a global network of people.
-Core Values - A place for users to upload their own post(photos of their baking). A place for users to like or comment on another user's post. A user can edit or delete their own posts/comments/images. A user can see all the posts that they have liked. A user can follow another user. A user will have their own profile page/about/profile image(can upload their own image). A user will have login and log out functionality. A new user will be able to sign up for their own account. Will need a react-bootstrap library to aid in the styling and responsiveness of the website. The application will be hosted on heroku. Will connect to a custom API to store our users/posts/likes/comments. User stories to guide me to build functionality . Simple automated tests to check the project works correctly. CRUD functionality for users.
+If the experience of navigating is straightforward, easy to use and the platform looks good this should create a good user experience. The goal for a user is to post/share their creations to a global network of people.
+Core Values - Foodies is a place for users to upload their own post(photos of their baking). A place for users to like or comment on another user's post. A user can edit or delete their own posts/comments/images, they can also see all the posts that they have liked. A user can follow another user, a user will have their own profile page/about/profile image(can upload their own image). A user will have login and log out functionality. A new user will be able to sign up for their own account. Will need a react-bootstrap library to aid in the styling and responsiveness of the website. The application will be hosted on heroku. Will connect to a custom API to store our users/posts/likes/comments. User stories to guide me to build functionality . Simple automated tests to check the project works correctly. CRUD functionality for users.
 
 ## Scope
 The features I want to implement are the ability for a user to create their own account, they can log in and log out with their own username and password which will make their account secure. They will be able to personalize their account with an about me section, so that other users can find out more about them. 
-They will also be able to upload a profile picture. They can change this at any time. The about me section can also be edited/updated.
+They will also be able to upload a profile picture and they can change this at any time. The about me section can also be edited/updated.
 They will be able to create a post about their creations, this will include a title, an image and a description relating to the image uploaded. 
-They will be able to edit/delete their own posts. Follow/ unfollow other users. Like and comment on other users posts and can comment on their own post in response to other users comments. 
+They will be able to edit/delete their own posts, follow/ unfollow other users, like and comment on other users posts and can comment on their own post in response to other users comments. 
 
 ## Structure
 Logically grouping the main home page so that additional pages are easy to navigate through a collapsible navigation icon. When a user who isn't signed in/signed up accesses the platform they will only be able to see the “Home,Sign In or Sign Up” navigation links. Only once they are a logged user will they have access to the full navigation links such as “Home, Add Post, Feed, Liked, Sign Out and Profile”. The user will be able to navigate easily through the platform which will add to a positive user experience. 
@@ -93,7 +92,6 @@ Post
 * Edit/delete posts- As a site user I can edit/delete my posts so that I can make changes to an existing post title/description or remove my post completely.
  By using generics (RetrieveUpdateDestroyAPIView) in the Post views a user can edit/delete their post.
 * View posts Feed- As a site user I can view all user posts made on the Feed page so that I can keep up to date with other users.
-
 * Post Order View- As a site user I can view the most recent posts, ordered by the most recent first so that I am kept up to date with the latest content.
 * Search Posts- As a site user I can search for posts/users in a search box so that I can find specific posts/users that I am searching for.
   By using custom filter set fields and search fields in the post view a user can search for relevant posts based on title, name and content.
@@ -113,8 +111,7 @@ Comment
 
 Likes  
 * Likes- As a site user I can see the number of likes on a post so that I can see which are becoming popular.
-  The likes model enables a users to like another user posts.
-
+  The likes model enables a user to like another user's posts.
 * Like/Unlike- As a site user I can like/unlike comments so that I can show my support/remove support for a particular post.
   By using generics (RetrieveDestroyAPIView) in the Like views. Users can remove their likes on a post.
   
@@ -151,11 +148,11 @@ For Users with an account.
   
 # Bugs
 * During the start of the project when using npm start an error occurred in the terminal which was “ code: 'ERR_OSSL_EVP_UNSUPPORTED” so I went to search slack for an answer and it looked like that everytime I wanted to start my app I would need to use “nvm install 16 && nvm use 16”  this would now allow me to start my app, but it was something I need to do every time.
-* Foodies-drf-api profile page error 500, changes were migrated to the database, wasn't connected correctly. 
+* drf-foodies-api profile page error 500, solved this by migrating changes to the database as wasn't connected correctly. 
 * The edit profile wasn’t loading correctly, my route needed a "/" to the end of the file path. 
 * The drop down menu for editing posts was not working as expected, after going through my code I had used a capital in PostsPage it should have been lowercase to begin with postsPage. Once corrected the drop down menu worked as expected. 
 * Comment count was not showing, after going through my code it turned out to be a spelling error in my post.js once corrected the number of comments was now showing as expected. 
-* While trying to implement emoji picker so that a user could add an emoji to their comment I was unable to make this work, after looking through slack and stackoverflow I realised that emojis are universal and will already be in the keyboard for smaller screens like phones and tablets. For desktops you need to press the windows key + and . to open an emoji window and then these can be added into a comment. 
+* While trying to implement emoji picker so that a user could add an emoji to their comment I was unable to make this work, after looking through slack and stackoverflow I realized that emojis are universal and will already be in the keyboard for smaller screens like phones and tablets. For desktops you need to press the windows key + and . to open an emoji window and then these can be added into a comment. 
 * When originally trying to deploy the back end to heroku the only page I had trouble with was the “profiles” page and an error of 500 was showing. I went back to my code and I did fix an error with my ProfilesList views. I had put the wrong generics in there and should have been generics.ListAPIView. I deployed once more and I then checked the profiles page and the 500 error was no longer showing and the information on the profile was showing.
 * While originally trying to deploy my project my api wasn't talking to my front end and I had a lot of CORS errors come up in my chrome dev tools console(Cors No Header Origin). After much headache over trying to fix this I had seen that we could combine our repositories into one work space which would mean that cors would no longer be an issue as the api was coming from the same workspace/shared base URL. I followed the steps set by code institute to enable my project to contain both front end and back end portions of the project and once all was set up and I deployed my project to heroku it was finally working! 
 
@@ -179,7 +176,7 @@ I would like to implement more messages to the users when they interact with the
 * The profile navigation link will take the logged user to their own profile in which they can edit their username, password, about me and profile image. These all worked as expected.
 * The sign out navigation link signs the user out of their account and leads them back to a landing page. The foodies logo takes the user back to the feed page. All navigation works as expected though manual testing.
 * Commenting on a post and the comment count work as expected and the like a comment function again works as expected and the number will increase the more likes a comment has. If a comment or a comment like is removed the number also goes down to highlight this.
-* Collapsible navigation works on smaller screen sizes and all buttons work  as expected. 
+* Collapsible navigation works on smaller screen sizes and all buttons work as expected. 
 
 # Testing A Profile
 * Logging in as Winter's profile.
@@ -197,15 +194,16 @@ I would like to implement more messages to the users when they interact with the
 
 # Testing Admin Panel
 ![Admin](frontend/src/assets/admin-panel.png)
-* Login to admin panel to make sure all new accounts were showing on the admin panel.
+* Login to admin panel to make sure all accounts were showing on the admin panel, which showed me that everything was connected.
 
 # Testing Back End
 ![Back-End](frontend/src/assets/sign-up-data-form.png)
-* Check to see if an account was showing on the back end which it was.
+* Check to see if an account was showing on the back end which it was, which showed me everything was connected as it should be.
   
-# Testing in React 
+# Tests
+* Tests passed for react in terminal 
+* Tests passed for P8P
 ![P8P-Test](frontend/src/assets/pass-test.png)
-* Tests pass for react in terminal and in P8P
 ![P8P-Test](frontend/src/assets/p8p-test.png)
 
 
@@ -225,7 +223,7 @@ I would like to implement more messages to the users when they interact with the
 * Heroku - Where the project was deployed to.
 * Google Development Tool - Where I checked the responsiveness of the website and edited any code without the risk of making it a permanent change.
 * Elephantsql - I used Elephantsql for my database.
-* Canva - For creating my logo/favicon.
+* Canva - For creating my logos/favicon.
 
 ## Languages
 * HTML
@@ -238,7 +236,7 @@ Using Google Development tools, I tested the accessibility of the site via the l
 ![Lighthouse](frontend/src/assets/lighthouse.png)
 
 # Setting up 
-* For the back end I started by using the template provided by code institute to create my repository. I called this drf_foodies_api. I then began to install the libraries I would need, first “pip3 install ‘django<4’". Once installed I then created my project name by inputting “django-admin startproject drf-foodies-api. '' to the terminal. I then proceed to Install Cloudinary Storage by inputting “pip install django-cloudinary-storage==0.3.0”, this will be storage for any images used. And finally I Installed the image processing library known as  Pillow by inputting “pip install Pillow==8.2.0” to the terminal. Now that I had installed some libraries I needed to put these into my settings.py file under the INSTALLED APPS portion. I created an env file and made sure that this was also present in my gitignore file. This would keep all the sensitive stuff hidden so it wouldn't be visible on the repository. 
+* For the back end I started by using the template provided by code institute to create my repository. I called this drf-foodies-api. I then began to install the libraries I would need, first “pip3 install ‘django<4’". Once installed I then created my project name by inputting “django-admin startproject drf-foodies-api. '' to the terminal. I then proceed to Install Cloudinary Storage by inputting “pip install django-cloudinary-storage==0.3.0”, this will be storage for any images used. And finally I Installed the image processing library known as Pillow by inputting “pip install Pillow==8.2.0” to the terminal. Now that I had installed some libraries I needed to put these into my settings.py file under the INSTALLED APPS portion. I created an env file and made sure that this was also present in my gitignore file. This would keep all the sensitive stuff hidden so it wouldn't be visible on the repository. 
 Next I added my profiles app, I needed to add this to settings.py under installed apps. Python3 manage.py startapp profiles. Every new app I need to install I use this same code but change the app name at the end. 
 Time to add the super user so only this user can access the admin panel. Enter “python3 manage.py createsuperuser” to the terminal and create a superuser.
 Install Django rest framework, enter “pip3 install djangorestframework”to the terminal and then add this library to installed apps “rest_framework”.
@@ -267,7 +265,7 @@ I went to my GitHub repository for my React project (foodies) . I then clicked o
 I then installed the npm packages required for developing with React using the following command "npm install". 
 I moved back to the root directory of my project with the following command "cd ..". I then opened the package.json file in the frontend directory, and at the bottom of the file I added a new key to the JSON object. This will allow the preview to run within my development environment proxy localhost 8000, I then opened the axiosDefaults.js file and commented out the baseURL setting.
 To ensure that the API’s routes do not clash with the React application’s routes when the project is deployed I needed to set a new path for the API routes in the server and the baseURL. In my env.py file, I made the following changes:
-Commented out the DEV environment variable.
+Comment out the DEV environment variable.
 Add a new key DEBUG with a value of ‘1’
 Add a new key ALLOWED_HOST with the value of my development environment URL
 Add a new key CLIENT_ORIGIN with the value of my development environment URL
@@ -301,6 +299,8 @@ Project is now working with both front end and back end in the workspace. Deploy
 
 # Credits
 
+I would like to credit and thank my amazing husband and our two children who were my motivation for continuing with all my projects. They kept me going when things got tough and I wouldn't be where I am today without them and their support. 
+
 ## Media 
 * All images used are from Pexels, I used Tiny PNG to compress images down and then used Cloudinary as my storage for them.[Pexels](https://www.pexels.com/)
 * All icons used for my navigation links are from FontAwesome.-[FontAwesome](https://fontawesome.com/)
@@ -313,3 +313,4 @@ Project is now working with both front end and back end in the workspace. Deploy
 * Code Institute - Code inspired and altered from React Essentials Mini Walkthrough
 * Alert messages - Code from - [Alert Messages](https://blog.logrocket.com/create-custom-react-alert-message/)
 * Landing page code inspired and altered from - [Landing Page](https://github.com/jyotiyadav2508/childhood-memories-react-pp5/blob/main/src/pages/landingPage/LandingPage.js)
+  
