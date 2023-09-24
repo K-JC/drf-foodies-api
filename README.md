@@ -154,14 +154,18 @@ For users with no account
 *About Us/Landing Page
 * Sign In Page
 * Sign Up Page
-![No Account](frontend/src/assets/)
+![No Account](frontend/src/assets/logged-in.png)
 For Users with an account ...
 * Add Post Page
 * Feed Page
 * Liked Page
 * Sign Out Page
 * Profile Page
-![With Account](frontend/src/assets/)
+![With Account](frontend/src/assets/logged-out.png)
+* Logo and Favicon
+![Logo Create](frontend/src/assets/canva-create.png)
+![Foodies Logo](frontend/src/assets/foodies.png)
+  
   
 # Bugs
 During the start of the project when using npm start an error occured in the terminal which was “ code: 'ERR_OSSL_EVP_UNSUPPORTED” so I went to search slack for an answer and it looked like that everytime I wanted to start my app I would need to use “nvm install 16 && nvm use 16”  this would now allow me to start my app, but it was something I need to do every time.
@@ -207,6 +211,21 @@ Collapsible navigation works on smaller screen sizes and all buttons work  as ex
 * Now Winter can see comments and can react to these comments by liking them.
 ![Test-Like-Comment](frontend/src/assets/winter-like-comment.png)
 
+# Testing Admin Pannel
+![Admin](frontend/src/assets/admin-panel.png)
+* Log in to admin pannel to make sure all new accounts were showing on the admin pannel.
+
+# Testing Back End
+![Back End](frontend/src/assets/sign-up-data-form.png)
+* Check to see if an account was showing on the back end which it was.
+  
+# Testing in React 
+![P8P Test](frontend/src/assets/pass-test.png)
+* Tests pass for react in terminal and in P8P
+![P8P Test](frontend/src/assets/p8p-test.png)
+
+
+
 # Technologies Used
 ## Frameworks, Libraries, Programs & Applications Used
 * Django Rest
@@ -230,7 +249,6 @@ Collapsible navigation works on smaller screen sizes and all buttons work  as ex
 * CSS
 * Python
 * Javascript
-
 
 # Accessibility
 Using Google Development tools, I tested the accessibility of the site via the lighthouse option. My platform scored 
@@ -314,8 +332,8 @@ My favicon and logo I created myself from using Canva.-[Canva](https://www.canva
 Code Institute - Code inspired and altered from Moments Walkthrough
 Code Institute - Code inspired and altered from Django Rest Framework Walkthrough
 Code Institute - Code inspired and altered from React Essentials Mini Walkthrough
-Alert messages - Code from [](https://blog.logrocket.com/create-custom-react-alert-message/)
-Landing page code inspired and altered from -[](https://github.com/jyotiyadav2508/childhood-memories-react-pp5/blob/main/src/pages/landingPage/LandingPage.js)
+Alert messages - Code from [Alert Messages](https://blog.logrocket.com/create-custom-react-alert-message/)
+Landing page code inspired and altered from -[Landing Page](https://github.com/jyotiyadav2508/childhood-memories-react-pp5/blob/main/src/pages/landingPage/LandingPage.js)
 
 
 
