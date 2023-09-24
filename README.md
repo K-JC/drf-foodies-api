@@ -135,13 +135,13 @@ Profile
   By using the profile views any posts by a user, followers and followed count will show on their profile page.
 
 # Features
-For users with no account
+For users with no account.
 * Home Page (leads to the Feed Page but this can't be interact with if not signed up/logged in)
 * About Us/Landing Page
 * Sign In Page
 * Sign Up Page
 ![No-Account](frontend/src/assets/logged-out.png)
-For Users with an account ...
+For Users with an account.
 * Add Post Page
 * Feed Page
 * Liked Page
