@@ -136,8 +136,8 @@ Profile
 
 # Features
 For users with no account
-*Home Page (leads to the Feed Page but this can't be interact with if not signed up/logged in)
-*About Us/Landing Page
+* Home Page (leads to the Feed Page but this can't be interact with if not signed up/logged in)
+* About Us/Landing Page
 * Sign In Page
 * Sign Up Page
 ![No-Account](frontend/src/assets/logged-out.png)
